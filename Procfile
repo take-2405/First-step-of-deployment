@@ -1,1 +1,1 @@
-web: bin/First-step-of-deployment
+web: First-step-of-deployment
