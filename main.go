@@ -1,8 +1,10 @@
 package main
 
 import (
+	"os"
 	"flag"
 	"F-deployment/pkg/server"
+	"log"
 )
 
 var (
@@ -11,11 +13,12 @@ var (
 )
 
 func init() {
-	//port := os.Getenv("PORT")
-	//if port == "" {
-	//	log.Fatal("$PORT must be set")
-	//}
-	flag.StringVar(&addr, "addr", ":8080", "tcp host:port to connect")
+	port := os.Getenv("PORT")
+	port =":"+port
+	if port == "" {
+		log.Fatal("$PORT must be set")
+	}
+	flag.StringVar(&addr, "addr", port, "tcp host:port to connect")
 	flag.Parse()
 }
 
