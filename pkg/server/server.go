@@ -12,5 +12,6 @@ var (
 
 func init(){
 	Server = gin.Default()
+	Server.GET("/", handler.HandleDefault())
 	Server.GET("/ping", handler.HandlePing())
 }
